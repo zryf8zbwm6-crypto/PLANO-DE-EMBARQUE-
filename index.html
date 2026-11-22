@@ -82,7 +82,7 @@ const say=t=>$('msg').textContent=t;
 async function gerar(){
  ['equipe','data','horario','obs','unidade'].forEach(k=>S[k]=$(k).value);save();
  if(!window.jspdf){say('Biblioteca de PDF não carregou.');return}
- const d=new window.jspdf.jsPDF({unit:'mm',format:'a4'}),W=210,M=12,NC=Math.max(1,S.vtrs.length),CW=(W-2*M)/NC;let y;
+ const d=new window.jspdf.jsPDF({unit:'mm',format:'a4'}),W=210,M=12,NC=Math.max(3,S.vtrs.length),CW=(W-2*M)/NC;let y;
  const ctr=(t,yy)=>d.text(t,W/2,yy,{align:'center'});
  try{d.addImage(LOGO_PM,'PNG',M,12,22,26)}catch(e){}
  try{d.addImage(LOGO_GDF,'PNG',W-M-30,17,30,16.2)}catch(e){}
